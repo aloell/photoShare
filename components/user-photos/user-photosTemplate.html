@@ -1,0 +1,32 @@
+<div style="height: 400px">
+    <div uib-carousel active="active"  no-wrap="noWrapSlides">
+      <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide {{slide.id}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </div>
+    </div>
+</div>
+<div layout="column" flex layout-fill ng-cloak>
+
+  <md-toolbar md-scroll-shrink>
+    <div class="md-toolbar-tools">Comments</div>
+  </md-toolbar>
+
+  <md-content style="height: 600px;">
+      <md-list layout-padding>
+        <md-list-item class="md-3-line" ng-repeat="message in messages">
+            <md-icon md-svg-icon="svg-{{message.user.id}}" class="avatar"></md-icon>
+            <div class="md-list-item-text">
+              <h3>{{message.comment}}</h3>
+              <h4>{{message.user.first_name+" "+message.user.last_name}}</h4>
+              <h4>
+                {{message.date_time}}
+              </h4>
+            </div>
+        </md-list-item>
+      </md-list>
+  </md-content>
+</div>

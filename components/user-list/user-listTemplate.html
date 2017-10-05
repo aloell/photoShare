@@ -1,0 +1,7 @@
+<md-list>
+    <md-list-item ng-repeat="it in ul.users"  layout-align="center center">
+        <md-button>
+        <a ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }" href="#users/{{it.id}}">{{it.first_name+" "+it.last_name}}</a>
+        </md-button>
+    </md-list-item>
+</md-list>
